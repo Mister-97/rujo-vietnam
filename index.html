@@ -102,10 +102,31 @@
     }
     .hero-bg {
       position: absolute; inset: 0; z-index: 0;
+      background: var(--bg);
+      overflow: hidden;
+    }
+    .hero-bg::before {
+      content: '';
+      position: absolute; inset: -20%;
       background:
-        radial-gradient(ellipse 70% 60% at 50% 40%, rgba(32,66,52,0.55) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 40% at 80% 70%, rgba(208,161,72,0.08) 0%, transparent 60%),
-        var(--bg);
+        radial-gradient(ellipse 60% 55% at 50% 45%, rgba(32,66,52,0.6) 0%, transparent 65%),
+        radial-gradient(ellipse 35% 35% at 75% 65%, rgba(208,161,72,0.1) 0%, transparent 55%);
+      animation: heroShift 12s ease-in-out infinite alternate;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute; inset: -20%;
+      background: radial-gradient(ellipse 40% 40% at 25% 35%, rgba(31,66,53,0.3) 0%, transparent 60%);
+      animation: heroShift2 16s ease-in-out infinite alternate;
+    }
+    @keyframes heroShift {
+      0%   { transform: translate(0, 0) scale(1); }
+      50%  { transform: translate(2%, 3%) scale(1.04); }
+      100% { transform: translate(-2%, -2%) scale(0.97); }
+    }
+    @keyframes heroShift2 {
+      0%   { transform: translate(0, 0) scale(1); opacity: 0.7; }
+      100% { transform: translate(4%, -3%) scale(1.08); opacity: 1; }
     }
     .hero-ring {
       position: absolute; border-radius: 50%;
@@ -301,7 +322,12 @@
       transition: border-color 0.3s, background 0.3s;
     }
     .event-card:hover { border-color: rgba(208,161,72,0.3); background: var(--bg3); }
-    .event-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+    .event-icon {
+      width: 36px; height: 36px;
+      margin-bottom: 1.25rem;
+      color: var(--gold);
+    }
+    .event-icon svg { width: 100%; height: 100%; }
     .event-card h3 { font-family: var(--font-d); font-size: 1.2rem; font-weight: 400; color: var(--cream); margin-bottom: 0.5rem; }
     .event-card p { font-size: 0.83rem; color: var(--cream-dim); font-weight: 300; line-height: 1.75; }
     .events-cta { margin-top: 3rem; }
@@ -532,36 +558,36 @@
       <div class="drink-card reveal">
         <div class="drink-thumb">
           <img src="drink-portuguese-egg-coffee.png" alt="Cà Phê Bánh Tart Trứng" />
-          <div class="drink-tag">Đặc Trưng</div>
+          <div class="drink-tag">Yêu Thích</div>
         </div>
         <div class="drink-info">
           <h3>Cà Phê Bánh Tart Trứng Bồ Đào Nha</h3>
           <div class="drink-divider"></div>
-          <p>Một loại cà phê lấy cảm hứng từ tráng miệng, mang hương vị phong phú của bánh pastel de nata truyền thống — mịn màng như custard, caramel ngọt ngào và cực kỳ thỏa mãn.</p>
+          <p>Lấy cảm hứng từ chiếc bánh pastel de nata truyền thống của Bồ Đào Nha. Mịn màng như custard, vị caramel nhẹ và có chiều sâu khiến bạn không thể không quay lại thêm lần nữa.</p>
         </div>
       </div>
 
       <div class="drink-card reveal">
         <div class="drink-thumb">
           <img src="drink-red-thai-milk-tea.png" alt="Trà Sữa Dừa Thái Đỏ" />
-          <div class="drink-tag">Yêu Thích</div>
+          <div class="drink-tag">Đặc Trưng</div>
         </div>
         <div class="drink-info">
           <h3>Trà Sữa Dừa Thái Đỏ</h3>
           <div class="drink-divider"></div>
-          <p>Nền trà Thái đậm đà, nhiều lớp kết hợp với sữa dừa béo ngậy. Màu sắc rực rỡ, hương vị ấm áp — được yêu thích tại mọi sự kiện chúng tôi tham gia.</p>
+          <p>Trà Thái đậm đà xếp lớp trên nền sữa dừa béo mượt. Màu sắc bắt mắt đến mức khách hàng chụp ảnh trước khi uống và hương vị khiến họ gọi thêm ly thứ hai.</p>
         </div>
       </div>
 
       <div class="drink-card reveal">
         <div class="drink-thumb">
-          <img src="drink-peanut-butter-kreme.png" alt="Sáng Tạo Từ Robusta" />
-          <div class="drink-tag">Dòng Nguồn Gốc</div>
+          <img src="drink-peanut-butter-kreme.png" alt="Peanut Kreme Coffee" />
+          <div class="drink-tag">House Blend</div>
         </div>
         <div class="drink-info">
-          <h3>Sáng Tạo Từ Robusta Việt Nam</h3>
+          <h3>Peanut Kreme Coffee</h3>
           <div class="drink-divider"></div>
-          <p>Đậm đà, sâu sắc và đậm chất Việt Nam. Được tạo ra từ những hạt robusta chất lượng cao, chế biến thành những thức uống tôn vinh văn hóa cà phê sâu sắc của đất nước.</p>
+          <p>Vị đậu phộng béo bùi hòa quyện cùng cà phê lạnh mượt mà theo cách bạn không ngờ tới. Cảm giác ngon miệng mà không hề nặng bụng. Một trong những món được gọi nhiều nhất tại các pop-up của Rujo.</p>
         </div>
       </div>
     </div>
@@ -578,24 +604,24 @@
     </div>
     <div class="events-grid">
       <div class="event-card reveal">
-        <div class="event-icon">🏆</div>
+        <div class="event-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 0 0 5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 1 0 5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div>
         <h3>Giải Thể Thao</h3>
-        <p>Tiếp sức cho vận động viên và khán giả tại các giải cầu lông, bóng đá và thể thao cộng đồng với trạm cold brew và thức uống đặc trưng.</p>
+        <p>Tiếp sức cho vận động viên và khán giả tại các giải cầu lông, bóng đá và thể thao cộng đồng với trạm cold brew và thức uống đặc trưng của Rujo.</p>
       </div>
       <div class="event-card reveal">
-        <div class="event-icon">🛍️</div>
+        <div class="event-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1-5h16l1 5"/><path d="M3 9h18"/><path d="M3 9v11a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V9"/><path d="M9 9v4a3 3 0 0 0 6 0V9"/></svg></div>
         <h3>Chợ &amp; Hội Chợ</h3>
-        <p>Booth pop-up của chúng tôi mang đến trải nghiệm Rujo đầy đủ tại các chợ cuối tuần và hội chợ sáng tạo — thức uống đặc sản, không gian thẩm mỹ và năng lượng tích cực.</p>
+        <p>Booth pop-up của Rujo xuất hiện tại các chợ cuối tuần và hội chợ sáng tạo với thức uống đặc sản, không gian được chụp ảnh nhiều nhất và năng lượng thu hút đám đông.</p>
       </div>
       <div class="event-card reveal">
-        <div class="event-icon">🤝</div>
+        <div class="event-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>Buổi Gặp Gỡ Cộng Đồng</h3>
-        <p>Từ các buổi gặp mặt khu phố đến sự kiện trường học, chúng tôi xuất hiện để làm cho khoảnh khắc trở nên đặc biệt hơn — từng ly một.</p>
+        <p>Từ buổi gặp mặt khu phố đến sự kiện trường học, chúng tôi có mặt để làm cho khoảnh khắc đó thực sự đáng nhớ. Từng ly một.</p>
       </div>
       <div class="event-card reveal">
-        <div class="event-icon">🎉</div>
+        <div class="event-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <h3>Tiệc Riêng Tư</h3>
-        <p>Sinh nhật, tiệc tùng và các dịp đặc biệt — Rujo cung cấp trải nghiệm thức uống trọn vẹn trở thành điểm nổi bật của sự kiện.</p>
+        <p>Sinh nhật, tiệc tùng và các dịp đặc biệt. Rujo mang đến trải nghiệm thức uống trọn vẹn thường trở thành điều được nhớ đến nhiều nhất trong cả buổi.</p>
       </div>
     </div>
     <div class="events-cta reveal">
@@ -641,7 +667,7 @@
   <div class="section-inner">
     <div class="premix-layout">
       <div>
-        <div class="section-label reveal">Premix &amp; Phát Triển</div>
+        <div class="section-label reveal">Premix Phát Triển</div>
         <h2 class="section-title reveal">Nền Thức Uống<br>Cho <em>Quy Mô Lớn</em></h2>
         <p class="section-body reveal">
           Rujo phát triển các nền thức uống và premix đặc biệt được thiết kế cho sự kiện, nhà cung cấp và đối tác hợp tác. Dù bạn cần chất lượng nhất quán cho một sự kiện lớn hay hương vị tùy chỉnh cho thương hiệu của mình — chúng tôi có chuyên môn để thực hiện.
@@ -649,19 +675,19 @@
         <div class="premix-list">
           <div class="premix-item reveal">
             <div class="premix-dot"></div>
-            Premix Cà Phê Bánh Tart Trứng — đậm đà như tráng miệng, sẵn sàng phục vụ
+            Premix Cà Phê Bánh Tart Trứng · đậm đà như tráng miệng, sẵn sàng phục vụ
           </div>
           <div class="premix-item reveal">
             <div class="premix-dot"></div>
-            Premix Trà Dừa Thái Đỏ — sẵn sàng pha theo mẻ lớn
+            Premix Trà Dừa Thái Đỏ · sẵn sàng pha theo mẻ lớn
           </div>
           <div class="premix-item reveal">
             <div class="premix-dot"></div>
-            Nền Cold Brew Robusta Việt Nam — đậm đà &amp; mượt mà
+            Peanut Kreme Coffee Premix · béo bùi, mượt mà và được yêu thích
           </div>
           <div class="premix-item reveal">
             <div class="premix-dot"></div>
-            Nền Thức Uống Tùy Chỉnh — phát triển theo yêu cầu của bạn
+            Nền Thức Uống Tùy Chỉnh · phát triển theo yêu cầu của bạn
           </div>
         </div>
         <div style="margin-top:2.5rem;" class="reveal">
