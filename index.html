@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rujo Coffee House Vietnam — Nâng Tầm Hương Vị</title>
+  <title>Rujo Coffee House Vietnam: Nâng Tầm Hương Vị</title>
   <meta property="og:type"        content="website"/>
   <meta property="og:title"       content="Rujo Coffee House Vietnam"/>
-  <meta property="og:description" content="Trải nghiệm cà phê sáng tạo — đồ uống độc đáo, sự kiện pop-up và hợp tác phát triển thức uống tại Việt Nam."/>
+  <meta property="og:description" content="Trải nghiệm cà phê sáng tạo với đồ uống độc đáo, sự kiện pop-up và hợp tác phát triển thức uống tại Việt Nam."/>
   <meta property="og:url"         content="https://vietnam.rujocoffeehouse.com"/>
   <meta name="twitter:card"       content="summary_large_image"/>
 
@@ -468,7 +468,7 @@
 
     /* ── MOBILE ── */
     @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
+      nav { padding: 1rem 1.25rem; }
       .nav-links { display: none; }
       .nav-links.open {
         display: flex; flex-direction: column;
@@ -479,12 +479,24 @@
       }
       .nav-links.open a { font-size: 1rem; }
       .nav-burger { display: flex; }
-      .about-grid, .premix-layout, .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      section { padding: 4.5rem 1.25rem; }
+      .about-grid, .premix-layout, .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
       .drinks-grid { grid-template-columns: 1fr; }
       .events-grid { grid-template-columns: 1fr; }
       .collab-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
-      .premix-visual { height: 260px; }
+      .premix-visual { height: 280px; }
+      .drink-thumb { height: 300px; }
+      .section-title { font-size: clamp(1.7rem, 6vw, 2.5rem); }
+      .hero-logo-img { width: min(320px, 85vw); }
+      .hero-tagline { font-size: 1.1rem; }
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .hero-ctas a { width: 100%; max-width: 280px; text-align: center; }
+      .collab-card { padding: 1.75rem 1.5rem; }
+      .event-card { padding: 1.5rem; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .footer-links { flex-wrap: wrap; gap: 1rem; }
+      .about-grid { margin-top: 2rem; }
     }
 
     /* ── REVEAL ── */
@@ -674,14 +686,14 @@
           Rujo Coffee House Vietnam là một concept cà phê sáng tạo, tập trung vào trải nghiệm thức uống độc đáo, hỗn hợp đặc biệt và các sự kiện pop-up được tổ chức tinh tế. Chúng tôi kết hợp nguyên liệu Việt Nam, cảm hứng toàn cầu và thiết kế thức uống đổi mới để tạo nên những khoảnh khắc đáng nhớ.
         </p>
         <p class="section-body reveal" style="margin-top:1rem;">
-          Tại Việt Nam, Rujo hoạt động như một <strong style="color:var(--cream);font-weight:500;">xưởng trải nghiệm thức uống pop-up và phát triển đồ uống</strong> — không phải quán cố định. Chúng tôi mang cà phê đến tận nơi bạn cần.
+          Tại Việt Nam, Rujo hoạt động như một <strong style="color:var(--cream);font-weight:500;">xưởng trải nghiệm thức uống pop-up và phát triển đồ uống</strong>. Không có mặt bằng cố định. Chúng tôi mang cà phê đến tận nơi bạn cần.
         </p>
         <div class="about-pillars">
           <div class="pillar reveal">
             <div class="pillar-num">01</div>
             <div class="pillar-body">
               <h4>Nguyên Liệu Chất Lượng</h4>
-              <p>Được lựa chọn kỹ lưỡng — robusta Việt Nam, trái cây nhiệt đới và các nguyên liệu đặc biệt nhập khẩu.</p>
+              <p>Được lựa chọn kỹ lưỡng: robusta Việt Nam, trái cây nhiệt đới và các nguyên liệu đặc biệt nhập khẩu.</p>
             </div>
           </div>
           <div class="pillar reveal">
@@ -695,7 +707,7 @@
             <div class="pillar-num">03</div>
             <div class="pillar-body">
               <h4>Trải Nghiệm Đáng Nhớ</h4>
-              <p>Chúng tôi không chỉ phục vụ cà phê — chúng tôi tạo ra những khoảnh khắc tại sự kiện, chợ và buổi tiệc riêng tư.</p>
+              <p>Chúng tôi không chỉ phục vụ cà phê mà còn tạo ra những khoảnh khắc tại sự kiện, chợ và buổi tiệc riêng tư.</p>
             </div>
           </div>
         </div>
@@ -711,7 +723,7 @@
   <div class="section-inner">
     <div class="section-label reveal">Thức Uống Đặc Trưng</div>
     <h2 class="section-title reveal">Được Tạo Ra Để <em>Ghi Nhớ</em></h2>
-    <p class="section-body reveal">Mỗi thức uống là một ý tưởng — được xây dựng từ cảm hứng văn hóa, nguyên liệu cao cấp và niềm tin rằng cà phê có thể là nghệ thuật.</p>
+    <p class="section-body reveal">Mỗi thức uống là một ý tưởng được xây dựng từ cảm hứng văn hóa, nguyên liệu cao cấp và niềm tin rằng cà phê có thể là nghệ thuật.</p>
 
     <div class="drinks-grid">
       <div class="drink-card reveal">
@@ -759,7 +771,7 @@
     <div class="events-header">
       <div class="section-label reveal">Sự Kiện Pop-Up</div>
       <h2 class="section-title reveal">Chúng Tôi Có Mặt<br><em>Ở Khắp Mọi Nơi</em></h2>
-      <p class="section-body reveal">Rujo Coffee House thường xuyên tổ chức và tham gia các trải nghiệm cà phê pop-up trên khắp Việt Nam — mang đến những thức uống sáng tạo và cà phê đặc sản cho các sự kiện và buổi gặp gỡ độc đáo.</p>
+      <p class="section-body reveal">Rujo Coffee House thường xuyên tổ chức và tham gia các trải nghiệm cà phê pop-up trên khắp Việt Nam, mang đến những thức uống sáng tạo và cà phê đặc sản cho các sự kiện và buổi gặp gỡ độc đáo.</p>
     </div>
     <div class="events-grid">
       <div class="event-card reveal">
@@ -770,7 +782,7 @@
       <div class="event-card reveal">
         <div class="event-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1-5h16l1 5"/><path d="M3 9h18"/><path d="M3 9v11a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V9"/><path d="M9 9v4a3 3 0 0 0 6 0V9"/></svg></div>
         <h3>Phát Triển Premix / Thức Uống</h3>
-        <p>Phòng R&amp;D nội bộ của Rujo phát triển công thức premix cao cấp và công thức thức uống độc quyền, sẵn sàng cho bán lẻ, bán sỉ và cấp phép thương hiệu. Từ ý tưởng đến sản phẩm hoàn chỉnh.</p>
+        <p>Phòng R&amp;D nội bộ của Rujo phát triển công thức premix cao cấp và thức uống độc quyền sẵn sàng cho bán lẻ, bán sỉ và cấp phép thương hiệu. Từ ý tưởng ban đầu đến sản phẩm hoàn chỉnh.</p>
       </div>
       <div class="event-card reveal">
         <div class="event-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
@@ -796,23 +808,23 @@
   <div class="section-inner">
     <div class="section-label reveal">Hợp Tác</div>
     <h2 class="section-title reveal">Sự Kiện Riêng &amp;<br><em>Hợp Tác Thương Hiệu</em></h2>
-    <p class="section-body reveal">Chúng tôi hợp tác với các nhà tổ chức sự kiện, thương hiệu và cá nhân muốn có trải nghiệm thức uống vượt ra ngoài phạm vi dịch vụ thông thường. Hãy chia sẻ ý tưởng của bạn — chúng tôi sẽ tạo ra thức uống phù hợp.</p>
+    <p class="section-body reveal">Chúng tôi hợp tác với các nhà tổ chức sự kiện, thương hiệu và cá nhân muốn có trải nghiệm thức uống vượt ra ngoài phạm vi dịch vụ thông thường. Chia sẻ ý tưởng của bạn và chúng tôi sẽ tạo ra thức uống phù hợp.</p>
 
     <div class="collab-grid">
       <div class="collab-card reveal">
         <div class="collab-num">01</div>
         <h3>Tiệc Riêng Tư</h3>
-        <p>Sinh nhật, buổi gặp mặt thân mật, tiệc đính hôn hay bất kỳ dịp nào xứng đáng có một thức uống đặc trưng — chúng tôi thiết kế thực đơn đồ uống riêng cho sự kiện của bạn.</p>
+        <p>Sinh nhật, buổi gặp mặt thân mật, tiệc đính hôn hay bất kỳ dịp nào xứng đáng có một thức uống đặc trưng. Chúng tôi thiết kế thực đơn đồ uống riêng cho sự kiện của bạn.</p>
       </div>
       <div class="collab-card reveal">
         <div class="collab-num">02</div>
         <h3>Đối Tác Sự Kiện</h3>
-        <p>Bạn đang tìm kiếm một đối tác thức uống cao cấp cho lễ hội, giải đấu hay chợ? Chúng tôi mang đến setup, đồ uống và năng lượng thương hiệu — sẵn sàng gây ấn tượng.</p>
+        <p>Bạn đang tìm kiếm một đối tác thức uống cao cấp cho lễ hội, giải đấu hay chợ? Chúng tôi mang đến setup, đồ uống và năng lượng thương hiệu sẵn sàng gây ấn tượng.</p>
       </div>
       <div class="collab-card reveal">
         <div class="collab-num">03</div>
         <h3>Hợp Tác Thương Hiệu</h3>
-        <p>Các thương hiệu và doanh nghiệp quan tâm đến concept đồ uống đồng thương hiệu, hương vị tùy chỉnh hay các activation độc đáo — hãy cùng tạo ra điều gì đó đáng nói.</p>
+        <p>Các thương hiệu và doanh nghiệp quan tâm đến concept đồ uống đồng thương hiệu, hương vị tùy chỉnh hay các activation độc đáo. Hãy cùng tạo ra điều gì đó đáng nói.</p>
       </div>
     </div>
     <div style="margin-top:3rem;" class="reveal">
@@ -827,14 +839,14 @@
     <div class="premix-layout">
       <div>
         <div class="section-label reveal">Premix Phát Triển</div>
-        <h2 class="section-title reveal">Nền Thức Uống<br>Cho <em>Quy Mô Lớn</em></h2>
+        <h2 class="section-title reveal">Thức Uống Premix<br><em>Sẵn Sàng Cho Mọi Quy Mô</em></h2>
         <p class="section-body reveal">
-          Rujo phát triển các nền thức uống và premix đặc biệt được thiết kế cho sự kiện, nhà cung cấp và đối tác hợp tác. Dù bạn cần chất lượng nhất quán cho một sự kiện lớn hay hương vị tùy chỉnh cho thương hiệu của mình — chúng tôi có chuyên môn để thực hiện.
+          Rujo phát triển các nền thức uống và premix đặc biệt được thiết kế cho sự kiện, nhà cung cấp và đối tác hợp tác. Dù bạn cần chất lượng nhất quán cho một sự kiện lớn hay hương vị tùy chỉnh riêng cho thương hiệu của mình, chúng tôi có chuyên môn để thực hiện.
         </p>
         <div class="premix-list">
           <div class="premix-item reveal">
             <div class="premix-dot"></div>
-            Premix Cà Phê Bánh Tart Trứng · đậm đà như tráng miệng, sẵn sàng phục vụ
+            Premix Cà Phê Bánh Tart Trứng &nbsp;·&nbsp; đậm đà như tráng miệng, sẵn sàng phục vụ
           </div>
           <div class="premix-item reveal">
             <div class="premix-dot"></div>
@@ -855,7 +867,6 @@
       </div>
       <div class="premix-visual reveal">
         <img src="premix-blend.png" alt="Rujo Premix Blend" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.8s cubic-bezier(0.16,1,0.3,1);" />
-        <em style="position:absolute;bottom:1.5rem;right:1.5rem;font-family:var(--font-d);font-size:2.5rem;font-style:italic;color:var(--gold);text-shadow:0 2px 12px rgba(0,0,0,0.6);z-index:2;">Pha Chế</em>
       </div>
     </div>
   </div>
@@ -871,12 +882,12 @@
       <div>
         <div class="contact-info reveal">
           <h3>Sẵn sàng hợp tác?</h3>
-          <p>Dù bạn đang lên kế hoạch cho một sự kiện, quan tâm đến hợp tác hay chỉ muốn tìm hiểu thêm — chúng tôi rất mong được nghe từ bạn. Điền vào mẫu và chúng tôi sẽ phản hồi trong vòng 48 giờ.</p>
+          <p>Dù bạn đang lên kế hoạch cho một sự kiện, quan tâm đến hợp tác hay chỉ muốn tìm hiểu thêm, chúng tôi rất mong được nghe từ bạn. Điền vào mẫu và chúng tôi sẽ phản hồi trong vòng 48 giờ.</p>
         </div>
         <div class="contact-links reveal">
           <a href="https://www.instagram.com/rujocoffeehouse" target="_blank" class="contact-link">
             <span class="contact-link-dot"></span>
-            Instagram — @rujocoffeehouse
+            Instagram: @rujocoffeehouse
           </a>
           <div class="contact-link">
             <span class="contact-link-dot"></span>
