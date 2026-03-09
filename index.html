@@ -994,17 +994,13 @@
       });
 
       if (res.ok) {
-        btn.textContent = 'Đã Gửi ✓';
-        btn.style.background = '#2a5444';
-        btn.style.color = '#f5f0e8';
-        form.reset();
-        setTimeout(() => {
-          btn.textContent = 'Gửi Yêu Cầu';
-          btn.style.background = '';
-          btn.style.color = '';
-          btn.disabled = false;
-          inputs.forEach(el => el.disabled = false);
-        }, 4000);
+        form.innerHTML = `
+          <div style="text-align:center;padding:2.5rem 1rem;">
+            <div style="font-size:2rem;margin-bottom:1rem;">✓</div>
+            <h3 style="font-family:var(--font-d);font-size:1.6rem;font-weight:300;color:var(--cream);margin-bottom:0.75rem;">Cảm ơn bạn đã liên hệ!</h3>
+            <p style="color:var(--cream-dim);font-size:0.9rem;line-height:1.8;">Đại diện của chúng tôi sẽ phản hồi bạn sớm nhất.<br>Vui lòng kiểm tra hộp thư để xem email xác nhận.</p>
+          </div>
+        `;
       } else {
         throw new Error('Server error');
       }
