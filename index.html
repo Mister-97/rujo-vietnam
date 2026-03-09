@@ -971,18 +971,55 @@
   });
 
   // Form submit
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = 'Đã Gửi ✓';
-    btn.style.background = '#2a5444';
-    btn.style.color = '#f5f0e8';
-    setTimeout(() => {
-      btn.textContent = 'Gửi Yêu Cầu';
-      btn.style.background = '';
-      btn.style.color = '';
-      e.target.reset();
-    }, 3000);
+    const form = e.target;
+    const btn = form.querySelector('.form-submit');
+    const inputs = form.querySelectorAll('input, select, textarea');
+
+    const name    = form.querySelector('input[type="text"]').value.trim();
+    const email   = form.querySelector('input[type="email"]').value.trim();
+    const type    = form.querySelector('select').value;
+    const message = form.querySelector('textarea').value.trim();
+
+    btn.textContent = 'Đang Gửi…';
+    btn.disabled = true;
+    inputs.forEach(el => el.disabled = true);
+
+    try {
+      const res = await fetch('https://rujo-contact-api.vercel.app/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, type, message }),
+      });
+
+      if (res.ok) {
+        btn.textContent = 'Đã Gửi ✓';
+        btn.style.background = '#2a5444';
+        btn.style.color = '#f5f0e8';
+        form.reset();
+        setTimeout(() => {
+          btn.textContent = 'Gửi Yêu Cầu';
+          btn.style.background = '';
+          btn.style.color = '';
+          btn.disabled = false;
+          inputs.forEach(el => el.disabled = false);
+        }, 4000);
+      } else {
+        throw new Error('Server error');
+      }
+    } catch {
+      btn.textContent = 'Lỗi — thử lại';
+      btn.style.background = '#7f1d1d';
+      btn.style.color = '#fca5a5';
+      btn.disabled = false;
+      inputs.forEach(el => el.disabled = false);
+      setTimeout(() => {
+        btn.textContent = 'Gửi Yêu Cầu';
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 3000);
+    }
   }
 </script>
 </body>
