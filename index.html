@@ -313,14 +313,13 @@
     }
     .drink-card:hover { transform: translateY(-4px); border-color: rgba(208,161,72,0.35); }
     .drink-thumb {
-      height: 420px;
       background: var(--bg2);
       position: relative;
       overflow: hidden;
     }
     .drink-thumb img {
-      width: 100%; height: 100%;
-      object-fit: cover;
+      width: 100%; height: auto;
+      display: block;
       object-position: center top;
       display: block;
       transition: transform 0.5s var(--ease);
@@ -486,7 +485,6 @@
       .collab-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .premix-visual { height: 280px; }
-      .drink-thumb { height: 300px; }
       .section-title { font-size: clamp(1.7rem, 6vw, 2.5rem); }
       .hero-logo-img { width: min(320px, 85vw); }
       .hero-tagline { font-size: 1.1rem; }
@@ -664,10 +662,6 @@
       <a href="#events" class="btn-outline">Đặt Pop-Up</a>
       <a href="#contact" class="btn-outline">Liên Hệ</a>
     </div>
-  </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    Cuộn
   </div>
 </section>
 
@@ -943,7 +937,7 @@
       <a href="#contact">Liên Hệ</a>
       <a href="en.html">English</a>
     </div>
-    <div class="footer-copy">© 2024 Rujo Coffee House</div>
+    <div class="footer-copy">© 2025 Rujo Coffee House</div>
   </div>
 </footer>
 
