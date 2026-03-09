@@ -266,12 +266,19 @@
     }
     .drink-card:hover { transform: translateY(-4px); border-color: rgba(208,161,72,0.35); }
     .drink-thumb {
-      height: 220px;
-      background: linear-gradient(160deg, var(--green2) 0%, var(--bg) 100%);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-d); font-size: 3rem; font-style: italic;
-      color: var(--gold); opacity: 0.3; position: relative;
+      height: 280px;
+      background: var(--bg2);
+      position: relative;
+      overflow: hidden;
     }
+    .drink-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.5s var(--ease);
+    }
+    .drink-card:hover .drink-thumb img { transform: scale(1.04); }
     .drink-tag {
       position: absolute; top: 1rem; left: 1rem;
       font-family: var(--font-m); font-size: 0.58rem; letter-spacing: 0.15em;
@@ -524,7 +531,7 @@
     <div class="drinks-grid">
       <div class="drink-card reveal">
         <div class="drink-thumb">
-          ☕
+          <img src="drink-portuguese-egg-coffee.png" alt="Cà Phê Bánh Tart Trứng" />
           <div class="drink-tag">Đặc Trưng</div>
         </div>
         <div class="drink-info">
@@ -536,7 +543,7 @@
 
       <div class="drink-card reveal">
         <div class="drink-thumb">
-          🍵
+          <img src="drink-red-thai-milk-tea.png" alt="Trà Sữa Dừa Thái Đỏ" />
           <div class="drink-tag">Yêu Thích</div>
         </div>
         <div class="drink-info">
@@ -548,7 +555,7 @@
 
       <div class="drink-card reveal">
         <div class="drink-thumb">
-          🌿
+          <img src="drink-peanut-butter-kreme.png" alt="Sáng Tạo Từ Robusta" />
           <div class="drink-tag">Dòng Nguồn Gốc</div>
         </div>
         <div class="drink-info">
